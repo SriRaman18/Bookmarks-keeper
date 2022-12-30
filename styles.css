@@ -1,0 +1,209 @@
+/* font-family: 'Josefin Sans', sans-serif;
+
+font-family: 'Lato', sans-serif;
+
+font-family: 'Montserrat', sans-serif;
+
+font-family: 'Open Sans', sans-serif;
+
+font-family: 'Poppins', sans-serif;
+
+font-family: 'Source Serif Pro', serif;
+
+font-family: 'Ubuntu', sans-serif; */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgba(128, 0, 128, 0.633);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%23b8b8b8' fill-opacity='0.4' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  overflow-x: hidden;
+}
+
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  background-color: violet;
+
+  border-radius: 5px;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.add:hover {
+  box-shadow: 0px 0px 4px black;
+}
+
+.add:active {
+  transform: scale(0.95);
+}
+
+.bookmark-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80vw;
+}
+
+.bookmark {
+  display: flex;
+  align-items: center;
+  width: 220px;
+  margin: 10px;
+  background-color: rgba(238, 130, 238, 0.462);
+  padding: 10px;
+  border-radius: 3px;
+  position: relative;
+  transition: all 0.2s linear;
+}
+
+.bookmark:hover {
+  background-color: rgba(225, 20, 225, 0.408);
+}
+
+.bookmark > * {
+  margin: 0px 5px;
+  user-select: none;
+}
+
+.bookmark a {
+  text-decoration: none;
+  color: white;
+}
+
+.bookmark a:hover {
+  text-decoration: underline;
+}
+
+.xmark {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  transition: all 0.2s linear;
+}
+
+.modal {
+  outline: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.425);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  flex-direction: column;
+  transition: all 1s linear;
+}
+
+.modal-container {
+  height: auto;
+  width: 60vw;
+  box-shadow: 0px 0px 4px black;
+  background-color: ghostwhite;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  outline: none;
+  font-size: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: violet;
+  padding: 10px;
+}
+
+.form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.one,
+.two {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.btn {
+  margin: 10px 0;
+  font-size: 20px;
+  display: flex;
+  width: 70px;
+  height: auto;
+  background-color: violet;
+  border: 0;
+  padding: 20px 40px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  outline: none;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.btn:hover {
+  background-color: rgba(221, 160, 221, 0.826);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+i {
+  cursor: pointer;
+}
+
+.modal i:active {
+  transform: scale(1.1);
+  transition: all 0.2s linear;
+}
+
+/* Media Query for responsive design*/
+
+@media screen and (max-width: 600px) {
+  .bookmark-container {
+    flex-direction: column;
+  }
+  .bookmark {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modal-container {
+    width: 90vw;
+  }
+
+  .add {
+    width: 150px;
+    text-align: center;
+  }
+}
